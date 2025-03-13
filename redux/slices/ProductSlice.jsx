@@ -25,6 +25,9 @@ export const ProductSlice=createSlice({
     name: "product",
     initialState,
     reducers:{
+        setSelectedProduct:(state,action)=>{
+            state.selectedProduct=action.payload;
+        }
 
     },
     extraReducers:(builder)=>{
@@ -40,5 +43,5 @@ export const ProductSlice=createSlice({
 
     }
 })
-export const {}=ProductSlice.actions
+export const {setSelectedProduct}=ProductSlice.actions
 export default ProductSlice.reducer

@@ -1,0 +1,51 @@
+.cardDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 90px;
+}
+.imageProduct{
+    width: 300px;
+    height: 400px;
+
+}
+.textProduct{
+    margin-left: 100px;
+    margin-right: 50px;
+    font-family: arial;
+    font-size: 15px;
+
+}
+.textProductTitle{
+    margin-left: 100px;
+    font-family: arial;
+    font-size: large;
+
+
+}
+.textProductPrice{
+    color: red;
+    margin-left: 100px;
+    font-size: 60px;
+    
+}
+.icons{
+    cursor: pointer;
+    font-size: 25px;
+}
+.sepet{
+    margin-left: 100px;
+    border: none;
+    margin-top: 20px;
+    font-size:30px;
+    background-color: beige;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.sepet:hover{
+    cursor:pointer;
+      box-shadow: 5px 5px 3px lightgrey;
+      transition: 0.6s;
+    
+    
+}
