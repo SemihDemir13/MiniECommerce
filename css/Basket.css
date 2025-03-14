@@ -1,0 +1,19 @@
+.basket{
+    border-radius: 8px;
+    
+}
+.basketImage{
+    width: 180px;
+    height: 200px;
+}
+.removeButton{
+    cursor: pointer;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+}
+.removeButton:hover{
+    transition: 0.5s;
+    box-shadow: 2px 2px 3px lightgrey;
+}
