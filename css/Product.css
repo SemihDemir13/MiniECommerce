@@ -11,8 +11,9 @@
 }
 .card:hover{
     transition: 0.3s;
-    cursor: pointer;
-    box-shadow: 5px 5px 3px lightgrey;
+    cursor: pointer;  
+      box-shadow: 5px 5px 3px lightgrey;
+
 
 }
 .button-detail{

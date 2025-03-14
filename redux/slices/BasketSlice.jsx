@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+
 
 const getBasketFromStorage = () => {
     const basket = localStorage.getItem("basket");
@@ -27,6 +29,7 @@ export const BasketSlice=createSlice({
         addToBasket:(state,action)=>{
             const findProduct= state.products && state.products.find((product)=>product.id==action.payload.id);
             if(findProduct){//daha önceden eklenmişse eğer
+                toast.warning("Bu ürün zaten sepetinizde!");
                 const extractedProducts=state.products.filter((product)=>product.id !=action.payload.id);
                 findProduct.count +=action.payload.count;
                 state.products=[...extractedProducts,findProduct];
@@ -35,11 +38,20 @@ export const BasketSlice=createSlice({
             }
             else{
                 state.products=[...state.products,action.payload];
+                toast.success("Ürün sepete eklendi!"); // ✅ Başarı mesajı göster
+
                 writeFromBasketToStorage(state.products);
             }
+        },
+        removeBasket:(state,action)=>{//seçilen ürünü kaldır
+            state.products=state.products.filter(product=>product.id !==action.payload);
+            toast.info("Ürün sepetten kaldırıldı!"); // 🔥 Kaldırma mesajı
+
+            writeFromBasketToStorage(state.products);
+            
         }
        
     }
 })
-export const { addToBasket } = BasketSlice.actions;
+export const { addToBasket,removeBasket } = BasketSlice.actions;
 export default BasketSlice.reducer

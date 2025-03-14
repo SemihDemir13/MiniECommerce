@@ -9,6 +9,8 @@ import ProductList from '../components/ProductList'
 import RouterConfig from '../config/RouterConfig'
 import { useSelector } from 'react-redux'
 import Drawer from '@mui/material/Drawer';
+import { ToastContainer } from "react-toastify";
+
 
 
 function App() {
@@ -22,20 +24,15 @@ function App() {
   return (
     <div>
       
-        <PageContainer>
-           <Header/>
-           <RouterConfig/>
-           <Loading/>
-           <Drawer  anchor="right" open={openDrawer} onClose={() => toggleDrawer(false)}>
-            {
-                <div>
-                  semih 
-                </div>
-              
-             }
-            
-           </Drawer>
-        </PageContainer>
+      <PageContainer>
+  <ToastContainer position="top-right" autoClose={3000} />
+  <Header />
+  <RouterConfig />
+  <Loading />
+  <Drawer anchor="right" open={openDrawer} onClose={() => toggleDrawer(false)}>
+    <div>semih</div>
+  </Drawer>
+</PageContainer>
     
       
     </div>

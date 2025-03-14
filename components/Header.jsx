@@ -26,6 +26,10 @@ function Header() {
       setTheme(!theme);
 
     }
+
+   const goToBasket=()=>{
+    navigate('/Basket')
+   }
     
 
   return (
@@ -40,7 +44,7 @@ function Header() {
          <div>
           {theme ? <FaMoon className='icons' onClick={changeTheme}/>:<CiLight className='icons' onClick={changeTheme}/>}
           <Badge badgeContent={sepettekirürünler.length} color="primary">
-             <FaBasketShopping  className='icons' />
+             <FaBasketShopping onClick={goToBasket} className='icons' />
           </Badge>
          </div>
       </div>
